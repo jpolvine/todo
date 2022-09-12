@@ -4,6 +4,11 @@ body,
     height: 100%;
     min-height: 100%;
 }
+
+
+/*                                  FONTS       */
+
+
 @font-face {
     font-family: 'OdibeeSans';
     font-weight: 900;
@@ -14,10 +19,13 @@ body,
     font-weight: 900;
     src: local('Bebas Neue'), url(./fonts/BebasNeue-Regular.ttf) format('truetype');
 }
+
+
+/*                                   BODY       */
+
+
 body {
     background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
-    
-
     margin: 0;
     padding: 0;
     font-family: 'Palatino', 'Helvetica', sans-serif;
@@ -38,13 +46,30 @@ tbody {
 label {
     color: rgb(136, 127, 255);
 }
-#motd {
-    background-color: #551a8d;
-    color: aquamarine;
-}
-#author {
-    background-color: #551a8d;
-    color: aquamarine;
-}
 
+
+/*                                   FIELDS          */
+
+
+#todo {
+    background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
+
+    background-color: #551a8d;
+    color: aquamarine;
+}
+#description {
+    background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
+    background-color: #551a8d;
+    color: aquamarine;
+}
+#timetostart {
+    background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
+    background-color: #551a8d;
+    color: aquamarine;
+}
+#timetoend {
+    background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
+    background-color: #551a8d;
+    color: aquamarine;
+}
  
