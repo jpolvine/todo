@@ -1,0 +1,28 @@
+ /* Create Motd button  */
+
+
+  .navbar-nav > li > a:hover{
+    background-color:#6d22b4 !important;
+
+ 
+  }
+  .navbar-brand.active > a:hover{
+    background-color:#6d22b4 !important;
+
+  }
+  /* Top navbar */
+  .navbar-light { 
+    background-color: #551a8d !important;
+    border: none !important;
+    border-width:0!important;
+    
+}
+.navbar-light > a:hover{ 
+  background-color: #6d22b4 !important;
+
+  
+}
+
+#createtodolink a:hover{
+  color: #00fff2;
+}
