@@ -100,7 +100,7 @@ export default function Create() {
           <input
             type="submit"
             value="Create TODO"
-            className="btn btn-primary"
+            className="btn btn-secondary"
           />
         </div>
       </form>

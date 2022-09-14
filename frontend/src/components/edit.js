@@ -122,7 +122,7 @@ export default function Edit() {
           <input
             type="submit"
             value="Update TODO"
-            className="btn btn-primary"
+            className="btn btn-secondary"
           />
         </div>
       </form>

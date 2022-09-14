@@ -55,6 +55,14 @@ label {
 
 /*                                   FIELDS          */
 
+.thead {
+    
+    text-align: justify;
+}
+
+.btn {
+    margin: 2px;
+}
 
 #todo {
     background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
