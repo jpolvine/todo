@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.27.2",
     "bootstrap": "^4.6.0",
+    "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-moment-input": "^0.2.31",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"

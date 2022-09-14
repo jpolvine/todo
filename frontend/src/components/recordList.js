@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import moment from "moment";
 
 const Record = (props) => (
   <tr>
     <td>{props.record.todo}</td>
     <td>{props.record.description}</td>
-    <td>{props.record.timetostart}</td>
-    <td>{props.record.timetoend}</td>
+    <td>{props.record.timetostart} ( {moment(props.record.timetostart, "DD-MM-YYYY HH:mm").fromNow()} )</td>
+    <td>{props.record.timetoend} ( {moment(props.record.timetoend, "DD-MM-YYYY HH:mm").fromNow()} )</td>
+    <td>{props.record.timeconsumed}  {moment.utc(moment(props.record.timetoend,"DD-MM-YYYY HH:mm").diff(moment(props.record.timetostart, "DD-MM-YYYY HH:mm"))).format("HH [ hours ]mm[ minutes]")} </td>
+
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
       <button className="btn btn-link"
@@ -19,8 +21,8 @@ const Record = (props) => (
       </button>
     </td>
   </tr>
-);
 
+);
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
@@ -42,8 +44,9 @@ export default function RecordList() {
 
     getRecords();
 
-    return; 
+    return;
   }, [records.length]);
+
 
   async function deleteRecord(id) {
     await fetch(`http://localhost:5000/${id}`, {
@@ -77,11 +80,11 @@ export default function RecordList() {
             <th>TODO</th>
             <th>Description</th>
             <th>Time to start</th>
-            <th>Time to end</th>            
+            <th>Time to end</th>
+            <th>Time to be consumed</th>
           </tr>
         </thead>
         <tbody>{recordList()}</tbody>
-        
       </table>
     </div>
   );

@@ -7,6 +7,7 @@ export default function Edit() {
     description: "",
     timetostart: "",
     timetoend: "",
+    timeconsumed: "",
     records: [],
   });
   const params = useParams();
@@ -46,17 +47,18 @@ export default function Edit() {
 
   async function onSubmit(e) {
     e.preventDefault();
-    const editedPerson = {
+    const editedField = {
       todo: form.todo,
       description: form.description,
       timetostart: form.timetostart,
       timetoend: form.timetoend,
+      timeconsumed: form.timeconsumed,
     };
 
     // This will send a post request to update the data in the database.
     await fetch(`http://localhost:5000/update/${params.id}`, {
       method: "POST",
-      body: JSON.stringify(editedPerson),
+      body: JSON.stringify(editedField),
       headers: {
         'Content-Type': 'application/json'
       },
@@ -75,6 +77,7 @@ export default function Edit() {
           <label htmlFor="todo">TODO: </label>
           <input
             type="text"
+            maxLength={64}
             className="form-control"
             id="todo"
             value={form.todo}
@@ -85,6 +88,7 @@ export default function Edit() {
           <label htmlFor="description">Description: </label>
           <input
             type="text"
+            maxLength={64}
             className="form-control"
             id="description"
             value={form.description}
@@ -92,9 +96,10 @@ export default function Edit() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="timetostart">Time to start: </label>
+          <label htmlFor="timetostart">Time to start(use this form: 14.9.2022 13.00) </label>
           <input
             type="text"
+            maxLength={16}
             className="form-control"
             id="timetostart"
             value={form.timetostart}
@@ -105,12 +110,14 @@ export default function Edit() {
           <label htmlFor="timetoend">Time to end: </label>
           <input
             type="text"
+            maxLength={16}
             className="form-control"
             id="timetoend"
             value={form.timetoend}
             onChange={(e) => updateForm({ timetoend: e.target.value })}
           />
         </div>
+        
         <div className="form-group">
           <input
             type="submit"

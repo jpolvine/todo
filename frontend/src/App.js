@@ -8,12 +8,15 @@ import Navbar from "./components/navbar";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
+import Clock from "./components/clock";
+import './App.css'
 
 
 const App = () => {
   return (
     <div>
       <Navbar />
+      <Clock />
       <div style={{ margin: 60 }}>
       <Routes>
         <Route exact path="/" element={<RecordList />} />

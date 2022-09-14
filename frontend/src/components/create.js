@@ -7,6 +7,8 @@ export default function Create() {
     description: "",
     timetostart: "",
     timetoend: "",
+    timeconsumed: "",
+
   });
   const navigate = useNavigate();
 
@@ -19,9 +21,10 @@ export default function Create() {
   // This function will handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
-    
+
 
     // When a post request is sent to the create url, we'll add a new record to the database.
+
     const newTodo = { ...form };
 
     await fetch("http://localhost:5000/record/add", {
@@ -31,19 +34,19 @@ export default function Create() {
       },
       body: JSON.stringify(newTodo),
     })
-    .catch(error => {
-      window.alert(error);
-      return;
-    });
+      .catch(error => {
+        window.alert(error);
+        return;
+      });
 
     // Forms to use in database
 
-    setForm({ todo: "", description: "", timetostart: "", timetoend: "" });
+    setForm({ todo: "", description: "", timetostart: "", timetoend: "", timeconsumed: "" });
     navigate("/");
   }
-
-  // This following section will display the form that takes the input from the user.
   
+  // This following section will display the form that takes the input from the user.
+
   return (
     <div>
       <h3>Create New TODO</h3>
@@ -52,6 +55,7 @@ export default function Create() {
           <label htmlFor="todo">TODO</label>
           <input
             type="text"
+            maxLength={64}
             className="form-control"
             id="todo"
             value={form.todo}
@@ -62,6 +66,7 @@ export default function Create() {
           <label htmlFor="description">Description</label>
           <input
             type="text"
+            maxLength={64}
             className="form-control"
             id="description"
             value={form.description}
@@ -69,9 +74,10 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="timetostart">Time to start</label>
+          <label htmlFor="timetostart">Time to start(use this form: 14.9.2022 13.00)</label>
           <input
             type="text"
+            maxLength={16}
             className="form-control"
             id="timetostart"
             value={form.timetostart}
@@ -82,14 +88,14 @@ export default function Create() {
           <label htmlFor="timetoend">Time to end</label>
           <input
             type="text"
+            maxLength={16}
             className="form-control"
             id="timetoend"
             value={form.timetoend}
             onChange={(e) => updateForm({ timetoend: e.target.value })}
           />
         </div>
-        <div className="form-group">
-        </div> 
+       
         <div className="form-group">
           <input
             type="submit"
