@@ -1,9 +1,9 @@
 To-do web application for organizing to-do stuff , with when to start and when to end fields
 
 
-NPM install in server
-NPM start in server
+```npm install in backend```
+```npm start in backend```
 
-NPM install in client
-NPM start in clent
+```npm install in frontend```
+```npm start in frontend```
 
