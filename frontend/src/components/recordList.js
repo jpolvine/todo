@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ModeIcon from '@mui/icons-material/Mode';
 
 const Record = (props) => {
   
@@ -14,14 +17,14 @@ const Record = (props) => {
     <td>{props.record.timeconsumed}  {moment.utc(moment(props.record.timetoend,"DD-MM-YYYY HH:mm").diff(moment(props.record.timetostart, "DD-MM-YYYY HH:mm"))).format("HH [ hours ]mm[ minutes]")} </td>
 
     <td>
-      <Link className="btn btn-secondary" to={`/edit/${props.record._id}`}>Edit</Link>
-      <button className="btn btn-secondary"
+      <Button variant="outlined" component={Link} to={`/edit/${props.record._id}`} startIcon={<ModeIcon />}>Edit</Button>
+      <Button variant="outlined" startIcon={<DeleteIcon />}
         onClick={() => {
           props.deleteRecord(props.record._id);
         }}
       >
         Delete
-      </button>
+      </Button>
     </td>
   </tr>
 
